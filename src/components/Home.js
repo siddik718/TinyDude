@@ -17,7 +17,7 @@ export default function Home() {
     const [msg,setMsg] = useState("");
     function handleFormSubmit(e) {
       e.preventDefault();
-      axios.post("{process.env.REACT_APP_PROXY}shorten/",inputurl)
+      axios.post("https://tinydude-production.up.railway.app/shorten/",inputurl)
       .then((response)=>{
         setShorturl(response.data);
         console.log(response)
@@ -26,7 +26,7 @@ export default function Home() {
     };
     useEffect(() => {
       if (shorturl) {
-        setMsg(`Hey, your new url is {process.env.REACT_APP_PROXY}/${shorturl.shorturl}`);
+        setMsg(`Hey, your new url is https://tinydude-production.up.railway.app/${shorturl.shorturl}`);
       }
     }, [shorturl]);
     
