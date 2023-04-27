@@ -4,13 +4,22 @@ import { Table } from 'react-bootstrap';
 
 export default function Stats() {
     const [data,setdata] = useState([]);
+    const [error,setError] = useState(null);
     useEffect(() => {
         axios.get("https://tinydude-production.up.railway.app/get_statistics/")
         .then((response)=>{
             console.log(response)
             setdata(response.data)
+            setError(null);
         })
-    }, [data])
+        .catch((error) => {
+            console.error(error);
+            setError(error);
+        });
+    }, []);
+    if (error) {
+        return <div>There was an error: {error.message}</div>;
+    }
     return (
         <>
         <h2 id="shortened-url" className="text-center">Statistics</h2>        
