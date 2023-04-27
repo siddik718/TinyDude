@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bq1d17@$(130qa&iyo2q&o&1^1a@zfv=v2pyxpgdxbf5*9emjh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False #variable is set to False to disable debug mode in production.
 
-ALLOWED_HOSTS = ["tinydude-production.up.railway.app"]
+ALLOWED_HOSTS = ["tinydude-production.up.railway.app"]  #hostname(s) that the Django project will respond to.
 
 
 # Application definition
@@ -39,14 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'api.apps.ApiConfig',
-    'rest_framework',
-    'corsheaders',
+    'api.apps.ApiConfig', #new
+    'rest_framework', #new
+    'corsheaders', #new
     'whitenoise.runserver_nostatic', # new
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', #new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'url_shortner.wsgi.application'
 #     }
 # }
 
+# I am Using PostgreSQL here.
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway',
         'USER': 'postgres',
@@ -135,16 +135,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
 import os
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'  
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] #new
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #new
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # new
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['https://tinydude-production.up.railway.app']
+CORS_ALLOW_ALL_ORIGINS = True #variable is set to True to allow cross-origin requests from any domain.
+CSRF_TRUSTED_ORIGINS = ['https://tinydude-production.up.railway.app'] #variable is set to a list of trusted origins for CSRF protection.
