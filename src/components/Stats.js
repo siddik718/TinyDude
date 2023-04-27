@@ -5,7 +5,7 @@ import { Table } from 'react-bootstrap';
 export default function Stats() {
     const [data,setdata] = useState([]);
     useEffect(() => {
-        axios.get("/get_statistics/")
+        axios.get("https://tinydude-production.up.railway.app/get_statistics/")
         .then((response)=>{
             console.log(response)
             setdata(response.data)
@@ -26,7 +26,7 @@ export default function Stats() {
             {data.map((dt) => (
               <tr key={dt.id}>
                 <td>{dt.longurl}</td>
-                <td>{process.env.REACT_APP_PROXY}/{dt.shortcode}</td>
+                <td>https://tinydude-production.up.railway.app/{dt.shortcode}</td>
                 <td>{dt.visited}</td>
               </tr>
             ))}
