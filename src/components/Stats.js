@@ -10,7 +10,7 @@ export default function Stats() {
             console.log(response)
             setdata(response.data)
         })
-    }, [])
+    }, [data])
     return (
         <>
         <h2 id="shortened-url" className="text-center">Statistics</h2>        
