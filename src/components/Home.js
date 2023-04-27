@@ -51,12 +51,12 @@ export default function Home() {  // Creating a functional component named Home
                 value={inputurl.longurl}
               />
             </div>
-            //Button For Shorten The Long Url When Clicked handleFormSubmit will be triggered 
+            // Button For Shorten The Long Url When Clicked handleFormSubmit will be triggered 
             <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Shorten URL</button>
-           //This button is linked to the useNavigate hook from the react-router-dom library, which navigates the user to the "stats" page when clicked.
+           // This button is linked to the useNavigate hook from the react-router-dom library, which navigates the user to the "stats" page when clicked.
             <button type="submit" className="btn btn-primary" onClick={() => navigate('stats')}>Statistics</button>
           </form>
-          //This message is updated based on whether a shortened URL has been generated or if there was an error during the process.
+          // This message is updated based on whether a shortened URL has been generated or if there was an error during the process.
           <div id="shortened-url" className="text-center"> {msg} </div>
         </div>
     );
