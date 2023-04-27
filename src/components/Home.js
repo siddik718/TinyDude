@@ -17,7 +17,7 @@ export default function Home() {
     const [msg,setMsg] = useState("");
     function handleFormSubmit(e) {
       e.preventDefault();
-      axios.post("shorten/",inputurl)
+      axios.post("{process.env.REACT_APP_PROXY}shorten/",inputurl)
       .then((response)=>{
         setShorturl(response.data);
         console.log(response)
