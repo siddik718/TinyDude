@@ -23,6 +23,10 @@ export default function Home() {
         console.log(response)
         console.log(response.data)
       })
+      .catch((error) => {
+        console.log(error);
+          setMsg("Please try again.");
+      });
     };
     useEffect(() => {
       if (shorturl) {
