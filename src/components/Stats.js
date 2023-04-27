@@ -13,21 +13,21 @@ export default function Stats() {
     }, [])
     return (
         <>
-        <h2>Statistics</h2>        
+        <h2 id="shortened-url" className="text-center">Statistics</h2>        
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Long URL</th>
-              <th>Short URL</th>
-              <th>Visited</th>
+              <th id="shortened-url" className="text-center">Long URL</th>
+              <th id="shortened-url" className="text-center">Short URL</th>
+              <th id="shortened-url" className="text-center">Visited</th>
             </tr>
           </thead>
           <tbody>
             {data.map((dt) => (
               <tr key={dt.id}>
-                <td>{dt.longurl}</td>
-                <td>https://tinydude-production.up.railway.app/{dt.shortcode}</td>
-                <td>{dt.visited}</td>
+                <td id="shortened-url" >{dt.longurl}</td>
+                <td id="shortened-url" >https://tinydude-production.up.railway.app/{dt.shortcode}</td>
+                <td id="shortened-url" >{dt.visited}</td>
               </tr>
             ))}
           </tbody>
