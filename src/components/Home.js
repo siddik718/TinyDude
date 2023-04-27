@@ -32,7 +32,7 @@ export default function Home() {
     
     return (
         <div className="App">
-          <h1 className="text-center">URL Shortener</h1>
+          <h1 className="text-center">TinyDude URL Shortener</h1>
           <form id="shorten-form">
             <div className="form-group">
               <label htmlFor="url-input">Enter URL to shorten:</label>
