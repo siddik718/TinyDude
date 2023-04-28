@@ -1,6 +1,6 @@
 # TinyDude URL Shortener
 
-This project is a web application that allows users to shorten URLs. It is built using Django for the backend and React for the frontend, with PostgreSQL as the database.
+This project is a web application that allows users to shorten URLs. It is built using Django for the backend on **master branch** and React for the frontend on **frontend branch**, with PostgreSQL as the database.
 Check out the live version [TinyDude](https://frontend--lustrous-figolla-6e637e.netlify.app/).
 
 
