@@ -57,6 +57,7 @@ Start the server
 ```bash
   python manage.py runserver
 ```
+*** KEEP THIS TERMINAL ON & OPEN A NEW TERMINAL *** 
 
 Now Go To `frontend` branch
 
