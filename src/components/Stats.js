@@ -40,7 +40,7 @@ export default function Stats() {
           <tbody>
             {data.map((dt) => (
               <tr key={dt.id}> 
-                <td id="shortened-url" >{dt.longurl}</td>
+                <td id="shortened-url" >{dt.longurl.length > 50 ? dt.longurl.substring(0, 50) : dt.longurl}</td>
                 <td id="shortened-url" >https://tinydude-production.up.railway.app/{dt.shortcode}</td>
                 <td id="shortened-url" >{dt.visited}</td>
               </tr>
