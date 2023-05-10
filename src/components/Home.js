@@ -54,7 +54,7 @@ export default function Home() {
           <h1 className="text-center">TinyDude URL Shortener</h1>
           <form id="shorten-form">
             <div className="form-group">
-              <label htmlFor="url-input">Enter URL to shorten:</label>
+              <label htmlFor="url-input">Enter URL to Shorten:</label>
               <input
                 type="text"
                 className="form-control"
@@ -66,7 +66,7 @@ export default function Home() {
               />
             </div>
             <button id="short" type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Shorten URL</button>
-            <button type="submit" className="btn btn-primary" onClick={() => navigate('stats')}>Statistics</button>
+            <button id="stat" type="submit" className="btn btn-primary" onClick={() => navigate('stats')}>Statistics</button>
           </form>
           <div id="shortened-url" className="text-center"> {msg} </div>
         </div>
