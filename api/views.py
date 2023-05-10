@@ -20,10 +20,12 @@ def shorten_url(request):
         longurl = serializer.validated_data['longurl']
         # Generating a unique shortcode of length 5
         shortcode = str(uuid.uuid4())[:5]
+        # Generate a short URL by combining the domain name of the current request and a randomly generated shortcode.
+        shorturl = f"http://{request.META['HTTP_HOST']}/{shortcode}"
         # Creating a new URL object with the long URL and shortcode and saving it to the database
-        url = URL.objects.create(longurl=longurl,shortcode=shortcode)
+        url = URL.objects.create(longurl=longurl,shortcode=shortcode,shorturl=shorturl)
         # Creating a dictionary containing the shortcode and returning it as a HTTP response with status code 201 Created
-        data = {'shorturl':shortcode}
+        data = {'shorturl':shorturl}
         return Response(data,status=status.HTTP_201_CREATED)
         # If the serializer is not valid, returning the errors as a HTTP response with status code 400 Bad Request
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
