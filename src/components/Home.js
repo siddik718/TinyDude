@@ -64,7 +64,7 @@ export default function Home() {
                 value={inputurl.longurl}
               />
             </div>
-            <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Shorten URL</button>
+            <button id="short" type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Shorten URL</button>
             <button type="submit" className="btn btn-primary" onClick={() => navigate('stats')}>Statistics</button>
           </form>
           <div id="shortened-url" className="text-center"> {msg} </div>
