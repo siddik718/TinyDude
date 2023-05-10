@@ -2,6 +2,7 @@
 import axios from 'axios'; // axios is used to make HTTP requests
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export default function Stats() {
     const [data,setdata] = useState([]); // data is initialized as an empty array
@@ -9,7 +10,7 @@ export default function Stats() {
 
     // Use the useEffect hook to fetch data from an API endpoint when the component mounts
     useEffect(() => {
-        axios.get("https://tinydude-production.up.railway.app/get_statistics/") // Make a GET request to the API endpoint
+        axios.get(`${apiUrl}/get_statistics/`) // Make a GET request to the API endpoint
         .then((response)=>{ // If the request is successful
             console.log(response)
             setdata(response.data)
@@ -41,7 +42,7 @@ export default function Stats() {
             {data.map((dt) => (
               <tr key={dt.id}> 
                 <td id="shortened-url" >{dt.longurl.length > 50 ? dt.longurl.substring(0, 50) : dt.longurl}</td>
-                <td id="shortened-url" >https://tinydude-production.up.railway.app/{dt.shortcode}</td>
+                <td id="shortened-url" >{apiUrl}/{dt.shortcode}</td>
                 <td id="shortened-url" >{dt.visited}</td>
               </tr>
             ))}
