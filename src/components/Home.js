@@ -45,7 +45,7 @@ export default function Home() {
     // Defining a side effect that sets the message displayed on the screen when the shorturl state variable changes
     useEffect(() => {
       if (shorturl) {
-        setMsg(`Hey, your new url is ${apiUrl}/${shorturl.shorturl}`);
+        setMsg(`Hey, your new url is ${shorturl.shorturl}`);
       }
     }, [shorturl]); // dependency on shorturl changing
 
